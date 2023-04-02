@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+
+            box-sizing: content-box;
+            margin: 1%;
+            padding: 5px;
+        }
+
+        .header {
+            padding: 20px;
+            text-align: center;
+            background: #151414;
+            color: white;
+            font-size: 20px;
+            font-style: oblique;
+        }
+
+        form {
+            margin: 100px;
+            background-color: rgba(218, 73, 136, 0.674);
+        }
+
+        input {
+            margin: 10px 0;
+        }
+
+        input[type='submit'] {
+            font-size: 1.3rem;
+        }
+
+        input:hover {
+            cursor: pointer;
+        }
+
+        input[type='submit'] {
+            padding: 0.5rem 0.8rem;
+            border: 2px solid #000000;
+            background-color: #000000;
+            color: rgb(255, 255, 255);
+            border-radius: 2px;
+            font-style: oblique;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="header">
+        <h1>Car Price Predictor</h1>
+        <h2>Enter your car details:</h2>
+    </div>
+    <form>
+        <label for="symboling">Symboling (insurance risk level):</label><br>
+        <input type="number" id="symboling" name="symboling"><br>
+        <label for="wheelbase">Wheelbase (Enter the distance):</label><br>
+        <input type="number" id="wheelbase" name="wheelbase"><br>
+        <label for="carlength">Car length (in inches):</label><br>
+        <input type="number" id="carlength" name="carlength"><br>
+        <label for="carwidth">Car width (in inches):</label><br>
+        <input type="number" id="carwidth" name="carwidth"><br>
+        <label for="carheight">Car height (in inches):</label><br>
+        <input type="number" id="carheight" name="carheight"><br>
+        <label for="enginesize">Engine size (in cc):</label><br>
+        <input type="number" id="enginesize" name="enginesize"><br>
+        <label for="horsepower">Horse power:</label><br>
+        <input type="number" id="horsepower" name="horsepower"><br>
+        <label for="peakrpm">Peak RPM:</label><br>
+        <input type="number" id="peakrpm" name="peakrpm"><br>
+        <label for="citympg">Miles per gallon (City):</label><br>
+        <input type="number" id="citympg" name="citympg"><br>
+        <label for="hmpg">Miles per gallon (Highway):</label><br>
+        <input type="number" id="hmpg" name="hmpg"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+
+</html>
