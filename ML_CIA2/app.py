@@ -31,7 +31,7 @@ def login():
             'SELECT * FROM details WHERE user_name=%s and passwords=%s', (username, password))
         user = cur.fetchone()
         if user:
-            return render_template("recommend.html")
+            return redirect(url_for("pred"))
         else:
             error = "Invalid Username or Password"
             return render_template("login.html")
@@ -41,24 +41,24 @@ def login():
 @app.route("/predict", methods=['GET', 'POST'])
 def pred():
     if request.method == 'POST':
-        symboling = int(request.form['Symboling'])
-        wheelbase = int(request.form['Enter Wheelbase'])
-        carlen = int(request.form['Enter Car length'])
-        carwid = int(request.form['Enter Car width'])
-        carht = int(request.form['Enter Car height'])
-        engsz = int(request.form['Enter Engine size'])
-        hp = int(request.form['Enter Horse Power'])
-        peakrpm = int(request.form['Enter Peak RPM'])
-        citympg = int(request.form['Enter City MPG'])
-        highmpg = int(request.form['Enter Highway MPG'])
+        symboling = int(request.form['symboling'])
+        wheelbase = int(request.form['wheelbase'])
+        carlen = int(request.form['carlength'])
+        carwid = int(request.form['carwidth'])
+        carht = int(request.form['carheight'])
+        engsz = int(request.form['enginesize'])
+        hp = int(request.form['horsepower'])
+        peakrpm = int(request.form['peakrpm'])
+        citympg = int(request.form['citympg'])
+        highmpg = int(request.form['hmpg'])
 
         values = [symboling, wheelbase, carlen, carwid,
                   carht, engsz, hp, peakrpm, citympg, highmpg]
 
         pred = model.predict([values])
-        return render_template("recommend.html")
-
-    return render_template("login.html")
+        return render_template("recommend.html", price=pred[0])
+    else:
+        return render_template("recommend.html", price="0")
 
 
 if __name__ == '__main__':
